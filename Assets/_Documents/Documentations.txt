@@ -1,0 +1,8 @@
+https://developers.google.com/ar/develop/unity-arf/augmented-faces/developer-guide
+
+What to add?
+* Make head 360 degrees
+
+* add a character customization feature.
+* Create shop for vtubers with free and paid characters, items, backgrounds, etc. Get a percentage of the price.
+* Link shop to Gamiru Vtuber app.

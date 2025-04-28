@@ -1,0 +1,59 @@
+Make sure the  model is not long hair, because i don't have a way to hide the AR of the back hair behind the real person.
+
+* Create full body model in VRoid.
+* Export as VRM.
+* Import as VRM to Blender. (Make sure to delete the camera, cube, and light in the scene first)
+* Select the "Body" Mesh > CATS Blender Plugin > Model Options > "Separate by: Materials".
+* Export as VRM. 
+	Export it to Desktop\Vtubing\VRM\For Face Tracking App\Blender Edited_Material Separated
+	Name it the same name as the original vrm + _blend.
+	E.g. if the name is Model_A then name it Model_A_blend
+* Import to Unity using UniVRM. 
+	VRM0 > Import from VRM 0.x
+	Import it to Asset/Prefab/full body
+	Move the folders generated in the Asset/Prefab/full body to Asset/UniVRM/Textures. (Leave the prefab in the prefab folder).
+* Create duplicate of full body (Ctrl + d) then move it to Asset/Prefab/head. 
+	Name it *_head.prefab
+* Open the head prefab
+* Edit to retain only the Head.
+	Select the Root then chhange Rotation Y to 180
+	Then remove the body. This usually involves removing the clothes, body skin, and shoes.
+		If the model has base hair, remove it as well because it will cause problems in the AR.
+		(Don't remove the "secondary" game object (This has the VRM Spring Bone (Script)))
+	Then remove the colliders for the body.
+		Move the head transform as the child of the root and delete the other transforms.
+	Select the head transform then copy the value of Position Y before setting it to 0 (Don't touch Z)
+		then select Face then put a minus sign (-) after the value in Skinned Mesh Renderer > Bounds > Center > Y, then paste the value. This will subtract it to the value.
+		then select Hair then put a minus sign (-) after the value in Skinned Mesh Renderer > Bounds > Center > Y, then paste the value. This will subtract it to the value.
+		(This will make sure that the transforms and their bounds are all in the same positions)
+* Select the root then adjust the values
+You can put 2 face prefab in the scene at the same position to see if the face are the same size.
+The values below is just what I usually use, change this depending on the face.
+	If it is a male:
+		Position: Y:-0.06
+		Rotation: Y: 180
+		Scal: (x: 1.05, y: 1.05, z: 1.05)
+	If it is female:
+		Position: Y:-0.065
+		Rotation: Y: 180
+		Scale: (x: 1.2, y: 1.2, z: 1.2)
+* Then add Neck_DepthMask gameobject (copy it from the other heads). 
+	This hides the hair behind the head so that the hair that is supposed to be in the back of your body will not appear at the front of your body.
+* (I don't know what this is, I don't think i need to do this) Remove the transform assigned to the Center of each VRM Spring Bone (Script)
+* add the following scripts to the head:
+ARFace
+FaceMovementTracker
+VRMBlendShapeController
+(Optional) Blinker
+(Optional) BlinkerController
+	Only use this, if you need to adjust the closing of the eyes when blinking.
+(Optional) Controls
+	i don't think i need this anymore, because i replaced it with Controller.cs
+
+
+* Create Sprites from Textures
+When you add a new prefab of a head, run the Create Sprites from Textures by going to Tools > Create Sprites from Textures.
+This will create a thumbnail of the prefab in the Asset/Sprites
+
+* Then, add the sprite and prefab to Canvas > Scroll View > HeadsScrollViewController(Script) > Head Sprite Prefab Pair.
+

@@ -1,0 +1,13 @@
+The error: No active ARCoreCameraSubsystem is available in this session, Please ensure that a valid loader configuration exists in the XR project settings.
+when playing it in the editor is expected behhavior (https://github.com/Unity-Technologies/arfoundation-samples/issues/734).
+You should test it in phone instead.
+-----------------------------------------------------------------------------
+https://www.youtube.com/channel/UCNjTjd2-PMC8Oo_-dCEss7A/featured (Omega Sisters)
+
+https://www.youtube.com/watch?v=LWImQSpcPDc (How To Place 3D Objects On Faces With Unity MARS Augmented Reality Face Tracking ?)
+-----------------------------------------------------------------------------
+Converting VRM into FBX
+https://www.youtube.com/watch?v=hy4qVVnjhBE ([TUTORIAL] [UNITY] Vroid to FBX [2 Methods])
+-----------------------------------------------------------------------------
+
+
