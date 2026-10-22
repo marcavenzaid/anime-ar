@@ -1,5 +1,5 @@
 # anime-ar
 
-Anime Augmented Reality for Android.
+![demo.webp](README_assets/demo.webp)
 
-![](README_assets/preview.gif)
+Anime Augmented Reality for Android.
